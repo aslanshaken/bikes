@@ -39,25 +39,23 @@ const Home = () => (
   <>
     <section className="section hero">
       <div className="hero-copy">
-        <p className="eyebrow">Electric · Commuter · Trail</p>
-        <h1>Nomad Bikes makes every ride feel intentional.</h1>
+        <p className="eyebrow">Urban · Gravel · Adventure</p>
+        <h1>Nomad Bikes ships dialed builds on your schedule.</h1>
         <p>
-          We design a curated collection of four modern bikes priced between $1,500 and $2,500. Each build balances confident
-          handling, premium components, and ready-to-ride style so you can dial in the experience that fits your everyday escape.
+          Choose one of four ready-to-ride bikes priced between $1,500 and $2,500. We handle the prep, torque check, and boxing—
+          you simply pick the model that matches your ride and we ship it straight from our studio within 72 hours.
         </p>
         <div className="hero-actions">
-          <a className="btn" href="/checkout">
-            Reserve a Checkout Slot
-          </a>
-          <span className="muted">Concierge support included</span>
+          <span className="muted">No custom menus—select a build and we handle the rest.</span>
         </div>
       </div>
       <div className="hero-card">
-        <p className="eyebrow">Contact</p>
-        <h3>hello@go4profit.us</h3>
-        <p>Monday - Friday, 9:00 AM - 5:00 PM EST</p>
-        <div className="pill">Designated NYC atelier</div>
-        <div className="pill soft">Complimentary assembly</div>
+        <p className="eyebrow">Ride Concierge</p>
+        <h3>Talk directly with us</h3>
+        <p>hello@go4profit.us</p>
+        <p>Monday - Friday · 9:00 AM - 5:00 PM EST</p>
+        <div className="pill">SoHo fitting studio</div>
+        <div className="pill soft">Pro assembly included</div>
       </div>
     </section>
 
@@ -74,6 +72,46 @@ const Home = () => (
       </div>
     </section>
 
+    <section className="section info-grid">
+      <article className="info-card">
+        <p className="eyebrow">Shipping</p>
+        <h3>USA rides ship $50 - $78</h3>
+        <p>Flat rates based on region. We pad every frame and send tracking as soon as it leaves the studio.</p>
+      </article>
+      <article className="info-card">
+        <p className="eyebrow">Warranty</p>
+        <h3>2 years frame + concierge</h3>
+        <p>Drop us a note and a builder replies within one business day with next steps.</p>
+      </article>
+      <article className="info-card">
+        <p className="eyebrow">Turnaround</p>
+        <h3>72 hr build window</h3>
+        <p>Reserve a slot, we pre-flight the bike, you roll out with tuned suspension and synced drivetrain.</p>
+      </article>
+    </section>
+
+    <section className="section shipping-section">
+      <div className="section-heading">
+        <p className="eyebrow">Ready to ship</p>
+        <h2>Studio prepped, boxed, and on the road</h2>
+        <p>Pick a bike, confirm your size, and we send tracking the moment it leaves our SoHo bench.</p>
+      </div>
+      <div className="shipping-grid">
+        <article className="shipping-card">
+          <h3>Confirm</h3>
+          <p>Choose any Nomad build, drop it in checkout, and we verify fit and availability within hours.</p>
+        </article>
+        <article className="shipping-card">
+          <h3>Prep</h3>
+          <p>Our team torques every bolt, bleeds brakes, and loads spares so the bike arrives tuned.</p>
+        </article>
+        <article className="shipping-card">
+          <h3>Ship</h3>
+          <p>We partner with insured carriers for 2-5 day delivery across the USA with real-time tracking.</p>
+        </article>
+      </div>
+    </section>
+
     <section className="section">
       <div className="section-heading">
         <p className="eyebrow">Why riders choose Nomad</p>
@@ -83,6 +121,20 @@ const Home = () => (
           and our team will preflight the bike before you arrive. We pair transparent pricing with robust warranties for peace
           of mind.
         </p>
+      </div>
+      <div className="process-grid">
+        <div className="process-step">
+          <h4>01 · Select</h4>
+          <p>Pick the frame that fits your ride style and add it to checkout.</p>
+        </div>
+        <div className="process-step">
+          <h4>02 · Tune</h4>
+          <p>We confirm stack, tire width, and accessories before the 72-hour bench session.</p>
+        </div>
+        <div className="process-step">
+          <h4>03 · Ship / Pickup</h4>
+          <p>Collect in NYC or ship anywhere in the USA for $50-$78 with insurance.</p>
+        </div>
       </div>
     </section>
   </>

@@ -60,7 +60,7 @@ const Checkout = () => {
                 <input type="text" name="zip" placeholder="11201" required />
               </label>
             </div>
-            <p className="shipping-note">🇺🇸 USA Only - Standard Shipping $15</p>
+            <p className="shipping-note">🇺🇸 USA Only - Standard Shipping $50</p>
             <h3 className="subhead">Payment Information</h3>
             <div className="form-grid">
               <label>

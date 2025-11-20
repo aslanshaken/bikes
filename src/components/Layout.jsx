@@ -2,17 +2,22 @@ import { NavLink, Outlet } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import { useCart } from '../context/CartContext';
 
-const navLinks = [
-  { path: '/', label: 'Home' },
+const headerLinks = [
   { path: '/checkout', label: 'Checkout' },
-  { path: '/support', label: 'Support' },
-  { path: '/privacy', label: 'Privacy' },
-  { path: '/terms', label: 'Terms' }
+  { path: '/support', label: 'Support' }
+];
+
+const footerLinks = [
+  { path: '/checkout', label: 'Checkout', includeBadge: true },
+  { path: '/support', label: 'Customer Support' },
+  { path: '/privacy', label: 'Privacy Policy' },
+  { path: '/terms', label: 'Terms of Service' }
 ];
 
 const Layout = () => {
   const { items } = useCart();
   const count = items.reduce((sum, i) => sum + i.qty, 0);
+  const year = new Date().getFullYear();
   return (
     <div className="page-wrapper">
       <header className="site-header">
@@ -21,7 +26,7 @@ const Layout = () => {
           <div className="logo-text">Nomad Bikes</div>
         </NavLink>
         <nav>
-          {navLinks.map((item) => (
+          {headerLinks.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
@@ -40,24 +45,32 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer>
-        <div>
+      <footer className="site-footer">
+        <div className="footer-brand">
           <strong>Nomad Bikes</strong>
-          <p>hello@go4profit.us · Monday - Friday, 9:00 AM - 5:00 PM EST</p>
+          <p>hello@go4profit.us</p>
+                    <p>929-928-5292</p>
+          <p className="footer-hours">Monday - Friday</p>
+          <p className="footer-hours">9:00 AM - 5:00 PM CST</p>
         </div>
-        <div className="footer-links">
-          <NavLink to="/checkout" className="nav-link">
-            Checkout {count > 0 && <span className="cart-badge footer" aria-label={`Cart has ${count} item${count>1?'s':''}`}>{count}</span>}
-          </NavLink>
-          <NavLink to="/support" className="nav-link">
-            Customer Support
-          </NavLink>
-          <NavLink to="/privacy" className="nav-link">
-            Privacy Policy
-          </NavLink>
-          <NavLink to="/terms" className="nav-link">
-            Terms of Service
-          </NavLink>
+        <nav className="footer-links" aria-label="Footer">
+          {footerLinks.map(({ path, label, includeBadge }) => (
+            <NavLink
+              key={path}
+              to={path}
+              className={({ isActive }) => (isActive ? 'footer-link active' : 'footer-link')}
+            >
+              <span>{label}</span>
+              {includeBadge && count > 0 && (
+                <span className="cart-badge footer" aria-label={`Cart has ${count} item${count>1?'s':''}`}>
+                  {count}
+                </span>
+              )}
+            </NavLink>
+          ))}
+        </nav>
+        <div className="footer-meta">
+          <p>© {year} Nomad Bikes. Built for riders everywhere.</p>
         </div>
       </footer>
     </div>
